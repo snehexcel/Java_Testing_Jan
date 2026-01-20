@@ -1,4 +1,3 @@
-
 package package1;
 
 import java.util.HashMap;
@@ -6,8 +5,6 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Lab4_5{
-
-    // --- Minimal Employee model (aligned with Lab 2.3 fields) ---
     static class Employee {
         int id;
         String name;
@@ -21,14 +18,11 @@ public class Lab4_5{
             this.salary = salary;
             this.designation = designation;
         }
-
         @Override
         public String toString() {
             return id + " - " + name + " - " + salary + " - " + designation + " - " + insuranceScheme;
         }
     }
-
-    // --- Same insurance logic you used in Lab 2.3 ---
     interface EmployeeService {
         void determineInsuranceScheme(Employee emp);
     }
@@ -44,17 +38,12 @@ public class Lab4_5{
             else                                                 emp.insuranceScheme = "No Scheme";
         }
     }
-
-    // --- Driver: implements Q5 (add → search by scheme → delete) ---
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         EmployeeService service = new EmployeeServiceImpl();
-
-        // Map: id -> Employee
         Map<Integer, Employee> map = new HashMap<>();
 
         try {
-            // i) Add multiple employees to HashMap
             System.out.print("How many employees? ");
             int n = Integer.parseInt(sc.nextLine().trim());
 
@@ -77,8 +66,6 @@ public class Lab4_5{
                 service.determineInsuranceScheme(emp); // same as Lab 2.3
                 map.put(id, emp);
             }
-
-            // ii) Accept scheme from user and display matching employees
             System.out.print("\nEnter Insurance Scheme to view (e.g., Scheme A/B/C or No Scheme): ");
             String queryScheme = sc.nextLine().trim();
 
@@ -91,8 +78,6 @@ public class Lab4_5{
                 }
             }
             if (!any) System.out.println("No employees found for that scheme.");
-
-            // iii) Delete an employee by ID
             System.out.print("\nEnter Employee ID to delete: ");
             int delId = Integer.parseInt(sc.nextLine().trim());
 
