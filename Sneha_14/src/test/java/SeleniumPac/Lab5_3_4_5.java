@@ -22,8 +22,8 @@ public class Lab5_3_4_5 {
         driver.findElement(By.linkText("Register")).click();
         driver.findElement(By.id("input-firstname")).sendKeys("Sneha");
         driver.findElement(By.id("input-lastname")).sendKeys("Baran");
-        driver.findElement(By.id("input-email")).sendKeys("sneznhrnhrnyrb@gmail.com");
-        driver.findElement(By.id("input-telephone")).sendKeys("9892222");
+        driver.findElement(By.id("input-email")).sendKeys("snezhr@gmail.com");
+        driver.findElement(By.id("input-telephone")).sendKeys("98922");
         driver.findElement(By.id("input-password")).sendKeys("Ab@e");
         driver.findElement(By.id("input-confirm")).sendKeys("Ab@e");
         boolean subs=driver.findElement(By.xpath("/html/body/div[2]/div[1]/div[1]/form/fieldset[3]/div[1]/div[1]/label/input[@value='1']")).isSelected();
