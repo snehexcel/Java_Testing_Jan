@@ -96,7 +96,6 @@ public class Lab6_1 {
         driver.findElement(By.xpath("//span[text()='My Account']")).click();
         driver.findElement(By.linkText("Logout")).click();
         
-        
         if (driver.findElement(By.xpath("//h1[text()='Account Logout']")).isDisplayed()) {
             System.out.println("Account Logout verified");
         }
