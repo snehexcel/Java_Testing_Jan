@@ -2,10 +2,6 @@ package SeleniumPac;
  
 import org.testng.annotations.Test;
  
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
- 
 import io.github.bonigarcia.wdm.WebDriverManager;
  
 import org.testng.annotations.BeforeMethod;
@@ -18,18 +14,13 @@ import static org.testng.Assert.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.Date;
 import java.util.Properties;
  
-import org.apache.commons.io.FileUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -39,13 +30,13 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
  
-public class TC_TestNG {
+public class TC_TestNG2_XML {
 	
 	WebDriver driver;
 	
 	String projectpath=System.getProperty("user.dir");
   @Test(dataProvider = "dp")
-  public void f(String url,String username, String password) throws IOException {
+  public void f(String url,String username, String password) {
 	  
 	  System.out.println("This is test");
 	  Login_POM obj=new Login_POM(driver);
@@ -57,38 +48,24 @@ public class TC_TestNG {
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
 			boolean dashborad=driver.findElement(By.xpath("//h6[text()='Dashboard']")).isDisplayed();
 			*/
-	  		ExtentReports extent=new ExtentReports();
-	  		ExtentSparkReporter spark=new ExtentSparkReporter(projectpath+"\\jan28th_Report.html");
-	  		extent.attachReporter(spark);
-	  		ExtentTest test=extent.createTest("Verify the login");
-	  		
 	  		obj.enterusername(username);
 	  		obj.enterpassword(password);
 	  		obj.clickonsubmit();
 	  		boolean dashboard=obj.dashboardisplayed();
 	  		
 	  		
-			if(dashboard==false)
+			if(dashboard==true)
 			{
 				System.out.println("login successful");
-				//Assert.assertEquals(dashboard, true);
-				test.pass("login successful");
+				Assert.assertEquals(dashboard, true);
 			}
 			else
 			
 			{
 				System.out.println("login unsuccessful");
-				//Assert.assertEquals(dashboard, false);
-				File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-				String timestamp=new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-				
-				String dest="./Screenshots/"+"Screenshot"+"_"+timestamp+".png";
-				File destfile=new File(dest);
-				FileUtils.copyFile(src, destfile);
-				test.fail("login unsuccessful").addScreenCaptureFromPath(dest);
-				
+				Assert.assertEquals(dashboard, false);
 			}
-			extent.flush();
+			
 	
   }
   @BeforeMethod
