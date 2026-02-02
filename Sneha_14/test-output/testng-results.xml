@@ -2,41 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-28T15:17:52 IST" name="Default suite" finished-at="2026-01-28T15:18:29 IST" duration-ms="36859">
+  <suite started-at="2026-02-01T15:27:15 IST" name="Default suite" finished-at="2026-02-01T15:28:14 IST" duration-ms="58907">
     <groups>
     </groups>
-    <test started-at="2026-01-28T15:17:52 IST" name="Default test" finished-at="2026-01-28T15:18:29 IST" duration-ms="36859">
-      <class name="com.orhrm.tests.logintest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:com.orhrm.tests.logintest@61710c6]" started-at="2026-01-28T15:17:53 IST" name="beforeMethod" finished-at="2026-01-28T15:17:56 IST" duration-ms="3095" status="PASS">
+    <test started-at="2026-02-01T15:27:15 IST" name="Default test" finished-at="2026-02-01T15:28:14 IST" duration-ms="58907">
+      <class name="SeleniumPac.TC_sneha">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:SeleniumPac.TC_sneha@77c2494c]" started-at="2026-02-01T15:27:16 IST" name="setUp" finished-at="2026-02-01T15:27:19 IST" duration-ms="3699" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="verifylogin(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.orhrm.tests.logintest@61710c6]" started-at="2026-01-28T15:17:56 IST" name="verifylogin" data-provider="logindata" finished-at="2026-01-28T15:18:29 IST" duration-ms="33027" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[https://opensource-demo.orangehrmlive.com/web/index.php/auth/login]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Admin]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[admin123]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- setUp -->
+        <test-method signature="tc1()[pri:0, instance:SeleniumPac.TC_sneha@77c2494c]" started-at="2026-02-01T15:27:19 IST" name="tc1" finished-at="2026-02-01T15:28:13 IST" duration-ms="54155" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifylogin -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.orhrm.tests.logintest@61710c6]" started-at="2026-01-28T15:18:29 IST" name="afterMethod" finished-at="2026-01-28T15:18:29 IST" duration-ms="657" status="PASS">
+        </test-method> <!-- tc1 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumPac.TC_sneha@77c2494c]" started-at="2026-02-01T15:28:13 IST" name="tearDown" finished-at="2026-02-01T15:28:14 IST" duration-ms="991" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- com.orhrm.tests.logintest -->
+        </test-method> <!-- tearDown -->
+      </class> <!-- SeleniumPac.TC_sneha -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
